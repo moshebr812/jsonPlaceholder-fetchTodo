@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .openTasks {
+            color: red;
+        }
+        .completedTasks {
+            color: blue;
+        }
+        /* .uoTodoList:nth-child(odd) {
+            color: blue;
+        } */
+        /* .uoTodoList:nth-child(even) {
+            color: green;
+        } */
+    </style>
+</head>
+<body>
+    <div id="todosStatus">
+        <h4>
+            Total Tasks:    <span id="idTotalTasks"></span>  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+            <span class="completedTasks">Completed Tasks:</span>    <span id="idCompletedTasks" class="completedTasks"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp   
+            <span class="openTasks"> Open Tasks: </span>  <span id="idOpenTasks" class="openTasks"> </span>
+        </h4>
+    </div>
+    <div id="todosButtons">
+        <button id="btnShowAll">All</button>
+        <button id="btnShowCompleted">Completed</button>
+        <button id="btnShowOpen">Open</button>
+    </div>
+    <div id="todosListMainContainer">
+        <h4 id="todosListHeader">
+            Todos List - now showing <strong id="idNowShowing"> AA </strong>
+        </h4>
+        <div id="todosListItems">
+           ....     
+        </div>
+    </div>
+</body>
+
+<script src="fetch-ToDos.js"></script>
+</html>
