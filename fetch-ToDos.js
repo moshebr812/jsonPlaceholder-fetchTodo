@@ -42,7 +42,7 @@ updateDOMTodoCounters = (todoStatus) => {
 }
 
 loadTodoListToDOM = (pArrayToPrint, showingWhatFilter) => {
-    console.log ('loadTodoListToDOM().  Array size = ' + pArrayToPrint.length);
+    console.log ('loadTodoListToDOM().  Array size = ' + pArrayToPrint.length + ' /showingWhatFilter='+showingWhatFilter);
     // May receive any of 3 lists: 1=All, 2=Completed, 3=Open
     let html = '<ol class="uoTodoList">';
     pArrayToPrint.forEach ( element =>{
@@ -54,6 +54,10 @@ loadTodoListToDOM = (pArrayToPrint, showingWhatFilter) => {
 
     document.querySelector('#todosListItems').innerHTML = html;
 
+    let classColor = (showingWhatFilter=='All') ? "allTasks" :
+                     ((showingWhatFilter=='Completed') ?  "completedTasks" : "openTasks");
+    
+    document.querySelector('#idNowShowing').className = classColor;
     document.querySelector('#idNowShowing').innerHTML = showingWhatFilter;
 }
 
@@ -107,30 +111,3 @@ async function init() {
 
 
 init();
-
-
-// function showAll() {
-//     console.log ('\n..... showAll()');
-//     let btn = document.querySelector('#btnShowAll');
-//     btn.addEventListener ('click', () => {
-//         loadTodoListToDOM (allTodoArray);
-//     });
-    
-    
-//     // <button id="btnShowCompleted">Completed</button>
-//     // <button id="btnShowOpen">Open</button>
-// }
-
-// function showCompleted() {
-//     console.log ('\n..... showCompleted()');
-//     // get the full list
-//     // filter only completed
-//     // load to DOM
-// }
-
-// function showOpen() {
-//     console.log ('\n..... showOpen()');
-//     // get the full list
-//     // filter only open
-//     // load to dom
-// }
