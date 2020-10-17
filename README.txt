@@ -26,3 +26,37 @@ fetch-ToDos
         updateDOMTodoCounters (update 3 counters on DOM)
         loadTodoListToDOM (loop on array, convert to <li>, st to DOM)
         initFilterButtons (add the events that set the different Array Lists)
+
+
+==============
+fetch-ToDos-classes
+==============
+    I split the function into 3 classes
+    class TodoApp {
+        1. performs the fetch via getTodoList
+
+        2. creates 3 arrays: all[] (via fetch), completed[] (via filter), open[] (via filter)
+
+        3. create instances:    
+            3.1 new TodoStatusCounters
+                this.calcTodoCounters (allTodoArr, completedTodoArr, openTodoArr);
+                this.updateDOMTodoCounters();
+        
+            3.2 new new TodoList
+                get pointers to DOM objects
+                this.loadTodoListToDOM('All');
+                this.initFilterButtons();
+    }
+
+
+    class TodoStatusCounters {
+
+    }
+    
+    class TodoList {
+
+    }
+
+    Why afe the buttons on the same class as the List?
+        As they work on the list, and have no scope without the list.
+        The list can "live" without the buttons
